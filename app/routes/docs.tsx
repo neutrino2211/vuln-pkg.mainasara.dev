@@ -255,7 +255,7 @@ export default function Docs() {
             </li>
           </ul>
 
-          <SubHeading id="quick-install">Quick Install (Recommended)</SubHeading>
+          <SubHeading id="quick-install">Quick Install - Linux/macOS (Recommended)</SubHeading>
           <TerminalWindow title="terminal">
             <div className="break-all">
               <span className="text-[var(--color-terminal-green)]">$ </span>
@@ -282,6 +282,33 @@ export default function Docs() {
             </div>
           </TerminalWindow>
 
+          <SubHeading id="windows-install">Windows Install</SubHeading>
+          <TerminalWindow title="powershell">
+            <div className="break-all">
+              <span className="text-[var(--color-terminal-cyan)]">PS&gt; </span>
+              irm https://raw.githubusercontent.com/neutrino2211/vuln-pkg/main/install.ps1 | iex
+            </div>
+          </TerminalWindow>
+          <p className="text-[var(--color-text-muted)] text-sm mb-4">
+            This installs vuln-pkg to <CodeBlock>%LOCALAPPDATA%\vuln-pkg</CodeBlock>.
+          </p>
+
+          <h4 className="text-[var(--color-text-primary)] font-semibold mb-2 mt-6">Windows Install Options</h4>
+          <TerminalWindow title="powershell">
+            <div className="space-y-3">
+              <div className="text-[var(--color-text-dim)]"># Install a specific version</div>
+              <div className="break-all">
+                <span className="text-[var(--color-terminal-cyan)]">PS&gt; </span>
+                $env:VULN_PKG_VERSION="v0.1.0"; irm https://raw.githubusercontent.com/neutrino2211/vuln-pkg/main/install.ps1 | iex
+              </div>
+              <div className="text-[var(--color-text-dim)] mt-2"># Install to a custom directory</div>
+              <div className="break-all">
+                <span className="text-[var(--color-terminal-cyan)]">PS&gt; </span>
+                $env:VULN_PKG_INSTALL_DIR="C:\tools"; irm https://raw.githubusercontent.com/neutrino2211/vuln-pkg/main/install.ps1 | iex
+              </div>
+            </div>
+          </TerminalWindow>
+
           <SubHeading id="download-releases">Download from Releases</SubHeading>
           <p className="text-[var(--color-text-muted)] mb-4">
             Download pre-built binaries from the{" "}
@@ -298,10 +325,11 @@ export default function Docs() {
           <div className="bg-[var(--color-bg-surface)] border border-[var(--color-text-dim)] p-4 text-sm mb-6">
             <p className="text-[var(--color-text-muted)] mb-2">Available binaries:</p>
             <ul className="space-y-1 text-[var(--color-text-muted)]">
-              <li><CodeBlock>vuln-pkg-linux-x86_64-musl.tar.gz</CodeBlock> - Linux x86_64 (static binary)</li>
+              <li><CodeBlock>vuln-pkg-linux-x86_64.tar.gz</CodeBlock> - Linux x86_64 (static binary)</li>
               <li><CodeBlock>vuln-pkg-linux-aarch64.tar.gz</CodeBlock> - Linux ARM64</li>
               <li><CodeBlock>vuln-pkg-darwin-x86_64.tar.gz</CodeBlock> - macOS Intel</li>
               <li><CodeBlock>vuln-pkg-darwin-aarch64.tar.gz</CodeBlock> - macOS Apple Silicon</li>
+              <li><CodeBlock>vuln-pkg-windows-x86_64.zip</CodeBlock> - Windows x86_64</li>
             </ul>
           </div>
 

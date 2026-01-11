@@ -433,10 +433,10 @@ export default function Home() {
           </h2>
 
           <div className="space-y-6">
-            {/* Quick Install */}
+            {/* Quick Install - Linux/macOS */}
             <div className="terminal-line stagger-1 max-w-2xl">
               <h3 className="text-[var(--color-text-primary)] font-semibold mb-3">
-                Quick Install{" "}
+                Linux / macOS{" "}
                 <span className="text-[var(--color-terminal-green)] text-sm font-normal">
                   (Recommended)
                 </span>
@@ -461,8 +461,32 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Download from Releases */}
+            {/* Windows Install */}
             <div className="terminal-line stagger-2 max-w-2xl">
+              <h3 className="text-[var(--color-text-primary)] font-semibold mb-3">
+                Windows
+              </h3>
+              <TerminalWindow title="powershell">
+                <div className="space-y-2">
+                  <div>
+                    <span className="text-[var(--color-terminal-cyan)]">
+                      PS&gt;{" "}
+                    </span>
+                    <span className="text-[var(--color-text-primary)] break-all">
+                      irm
+                      https://raw.githubusercontent.com/neutrino2211/vuln-pkg/main/install.ps1
+                      | iex
+                    </span>
+                  </div>
+                </div>
+              </TerminalWindow>
+              <p className="text-[var(--color-text-dim)] text-xs mt-2">
+                Installs to %LOCALAPPDATA%\vuln-pkg
+              </p>
+            </div>
+
+            {/* Download from Releases */}
+            <div className="terminal-line stagger-3 max-w-2xl">
               <h3 className="text-[var(--color-text-primary)] font-semibold mb-3">
                 Download from Releases
               </h3>
@@ -481,7 +505,7 @@ export default function Home() {
                 <ul className="space-y-1 text-[var(--color-text-muted)]">
                   <li>
                     <code className="text-[var(--color-terminal-amber)]">
-                      vuln-pkg-linux-x86_64-musl.tar.gz
+                      vuln-pkg-linux-x86_64.tar.gz
                     </code>{" "}
                     - Linux x86_64
                   </li>
@@ -503,12 +527,18 @@ export default function Home() {
                     </code>{" "}
                     - macOS Apple Silicon
                   </li>
+                  <li>
+                    <code className="text-[var(--color-terminal-amber)]">
+                      vuln-pkg-windows-x86_64.zip
+                    </code>{" "}
+                    - Windows x86_64
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Build from Source */}
-            <div className="terminal-line stagger-3 max-w-2xl">
+            <div className="terminal-line stagger-4 max-w-2xl">
               <h3 className="text-[var(--color-text-primary)] font-semibold mb-3">
                 Build from Source
               </h3>
